@@ -234,10 +234,33 @@
 
 // 3.2.12 null、undefined、void、never
 
-// (a)
-function a(x: number) {
-  if (x < 10) {
-    return x;
-  }
-  return null;
-}
+// // (a) numberまたはnullを返す関数
+// function a(x: number) {
+//   if (x < 10) {
+//     return x;
+//   }
+//   return null;
+// }
+
+// // (b) undefinedを返す関数
+// function b() {
+//   return undefined;
+// }
+
+// // (c) voidを返す関数
+// function c() {
+//   let a = 2 + 2;
+//   let b = a * a;
+// }
+
+// // (d) neverを返す関数
+// function d() {
+//   throw TypeError("I always error");
+// }
+
+// // (e) neverを返すもう一つの関数
+// function e() {
+//   while (true) {
+//     doSomething();
+//   }
+// }
