@@ -264,3 +264,29 @@
 //     doSomething();
 //   }
 // }
+
+//------------------------------
+
+// 3.2.13 列挙型
+
+enum Language {
+  English = 0,
+  Spanish = 1,
+  Russian = 2,
+}
+
+let myFirstLanguage = Language.Russian;
+let mySecondLanguage = Language.English;
+
+//------------------------------
+
+// 3.4 練習問題
+
+let a = 1042; // number
+let b = "apples and oranges"; // string
+const c = "pineapples"; // 'pineapples'
+let d = [true, true, false]; // boolean[]
+let e = { type: "ficus" }; // {type: string}
+let f = [1, false]; // (number | boolean)[]
+const g = [3]; // number[]
+let h = null;
