@@ -282,11 +282,55 @@ let mySecondLanguage = Language.English;
 
 // 3.4 練習問題
 
-let a = 1042; // number
-let b = "apples and oranges"; // string
-const c = "pineapples"; // 'pineapples'
-let d = [true, true, false]; // boolean[]
-let e = { type: "ficus" }; // {type: string}
-let f = [1, false]; // (number | boolean)[]
-const g = [3]; // number[]
-let h = null;
+// let a = 1042; // number
+// let b = "apples and oranges"; // string
+// const c = "pineapples"; // 'pineapples'
+// let d = [true, true, false]; // boolean[]
+// let e = { type: "ficus" }; // {type: string}
+// let f = [1, false]; // (number | boolean)[]
+// const g = [3]; // number[]
+// let h = null;
+
+//------------------------------
+
+// 4.1.5 ジェネレーター
+// function* createFibonacciGenerator(): Generator<number> {
+//   let a = 0;
+//   let b = 1;
+//   while (true) {
+//     yield a;
+//     [a, b] = [b, a + b];
+//   }
+// }
+
+// let fibonacciGenerator = createFibonacciGenerator();
+// console.log(fibonacciGenerator.next());
+// console.log(fibonacciGenerator.next());
+// console.log(fibonacciGenerator.next());
+// console.log(fibonacciGenerator.next());
+// console.log(fibonacciGenerator.next());
+// console.log(fibonacciGenerator.next());
+
+//------------------------------
+
+// 4.1.6 イテレーター
+
+let numbers = {
+  *[Symbol.iterator]() {
+    for (let n = 1; n <= 10; n++) {
+      yield n;
+    }
+  },
+};
+
+// for-ofを使って反復可能オブジェクトを反復する
+for (let a of numbers) {
+  console.log(a); // 1, 2, 3 など
+}
+
+// 反復可能オブジェクトを展開する
+let allNumbers = [...numbers]; // number[]
+console.log(allNumbers); // [1, 2, 3, .., 10]
+
+// 反復可能オブジェクトを分割割り当てする
+let [one, two, ...rest] = numbers; // [number, number, number[]]
